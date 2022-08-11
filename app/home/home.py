@@ -10,7 +10,8 @@ home = Blueprint(
     'home', __name__,
     url_prefix=api_prefix,
     template_folder='template',
-    static_folder='static'
+    static_folder='static',
+    static_url_path='home/static'
 )
 
 BASE_URL = app.config['BASE_URL']
@@ -25,8 +26,6 @@ def all_properties():
     PAGE = PAGE = f'page={page}' if page else 'page=1'
     pagination, properties = get_next_page(
         f'{BASE_URL}/properties?{PAGE_LIMIT}&{PAGE}')
-
-    print(pagination)
 
     return render_template('home.html', pagination=pagination,
                            properties=properties)

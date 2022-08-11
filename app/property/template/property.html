@@ -2,17 +2,19 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <title>Property description</title>
+        <title>{{property_info.title}}</title>
         <link
             rel="stylesheet"
             href="{{ url_for('property_profile.static', filename='property_profile.css') }}"
         />
     </head>
     <body>
-        <img
-            src="{{property_info.property_images[0].url}}"
-            alt="{{property_info.property_images[0].title}}"
-        />
+        <div id="head_image">
+            <img
+                src="{{property_info.property_images[0].url}}"
+                alt="{{property_info.property_images[0].title}}"
+            />
+        </div>
         <h1>{{property_info.title}}</h1>
 
         {% for desc in property_info.description.split('-') %}

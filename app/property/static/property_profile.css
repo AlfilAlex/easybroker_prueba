@@ -4,6 +4,22 @@
 }
 
 .contact_form div {
-    width: 100%;
+    width: 35%;
     margin-bottom: 9vh;
+}
+
+.head_image {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+img {
+    display: inline;
+    margin: 0 auto;
+    width: 35%;
+    clip-path: circle();
+    border-radius: 50%;
 }
