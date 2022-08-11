@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Property description</title>
+        <link
+            rel="stylesheet"
+            href="{{ url_for('property_profile.static', filename='property_profile.css') }}"
+        />
+    </head>
+    <body>
+        <img
+            src="{{property_info.property_images[0].url}}"
+            alt="{{property_info.property_images[0].title}}"
+        />
+        <h1>{{property_info.title}}</h1>
+
+        {% for desc in property_info.description.split('-') %}
+        <p>{{desc}}</p>
+        {% endfor %}
+
+        <p>{{property_info.public_id}}</p>
+        <p>{{property_info.property_type}}</p>
+        <p>{{property_info.location}}</p>
+
+        <h2>Contact form</h2>
+        <form
+            action="{{url_for('property_profile.property_contact', property_id=property_info.public_id)}}"
+            method="post"
+        >
+            <div id="contact_form">
+                <div id="input_form">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" />
+                </div>
+                <div id="input_form">
+                    <label for="phone">Phone</label>
+                    <input type="text" name="phone" />
+                </div>
+                <div id="input_form">
+                    <label for="email">Email</label>
+                    <input type="text" name="email" />
+                </div>
+                <div id="input_form">
+                    <label for="message">Message</label>
+                    <input type="text" name="message" />
+                </div>
+
+                <input type="submit" value="Submit" />
+            </div>
+        </form>
+    </body>
+</html>

@@ -9,7 +9,8 @@ api_prefix = app.config['PREFIX']
 home = Blueprint(
     'home', __name__,
     url_prefix=api_prefix,
-    template_folder='template'
+    template_folder='template',
+    static_folder='static'
 )
 
 BASE_URL = app.config['BASE_URL']
@@ -21,13 +22,11 @@ PAGE_LIMIT = 'limit=5'
 def all_properties():
 
     page = request.args.get('page')
-    if page:
-        PAGE = f'page={page}'
-    else:
-        PAGE = 'page=1'
-
+    PAGE = PAGE = f'page={page}' if page else 'page=1'
     pagination, properties = get_next_page(
         f'{BASE_URL}/properties?{PAGE_LIMIT}&{PAGE}')
+
+    print(pagination)
 
     return render_template('home.html', pagination=pagination,
                            properties=properties)
@@ -37,7 +36,12 @@ def get_next_page(next_page_url):
     res = requests.get(next_page_url, headers={
         'X-Authorization': EB_TOKEN})
     res = res.json()
-    pagination = res['pagination']
+
     properties = res['content']
+    pagination = res['pagination']
+
+    residue = pagination['total'] % pagination['limit']
+    total_pages = int(pagination['total'] / pagination['limit'])
+    pagination['total_pages'] = total_pages if not residue else total_pages + 1
 
     return pagination, properties

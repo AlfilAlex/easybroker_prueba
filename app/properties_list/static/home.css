@@ -1,3 +1,15 @@
-.pagination {
+#pagination {
+    margin-top: 5vh;
+    width: 20%;
+    background-color: rgb(232, 243, 255);
     display: flex;
+    justify-content: space-around;
+}
+
+#properties_card {
+    background-color: bisque;
+    width: 75%;
+    margin-left: 5vw;
+    margin-bottom: 2vh;
+    padding: 2vh;
 }

@@ -1,0 +1,9 @@
+.contact_form {
+    display: flex;
+    background-color: aquamarine;
+}
+
+.contact_form div {
+    width: 100%;
+    margin-bottom: 9vh;
+}

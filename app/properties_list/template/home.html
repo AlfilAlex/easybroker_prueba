@@ -3,16 +3,23 @@
     <head>
         <meta charset="UTF-8" />
         <title>Properties to sell and buy</title>
+        <link
+            rel="stylesheet"
+            href="{{ url_for('home.static', filename='home.css') }}"
+        />
     </head>
     <body>
-        <h1>Upload new File</h1>
+        <h1>Propiedades en Comala, Jalisco</h1>
         {% for property in properties %}
 
-        <div>
-            <h2>{{property.title}}</h2>
-            <h3>{{property.location}}</h3>
-            <p>{{property.property_type}}</p>
-            <p>Public id: {{property.public_id}}</p>
+        <div id="properties_card">
+            <div>
+                <h2>{{property.title}}</h2>
+                <h3>{{property.location}}</h3>
+                <p>{{property.property_type}}</p>
+                <p>Public id: {{property.public_id}}</p>
+                <a href="{{url_for('property_profile.property_page', property_id=property.public_id)}}"> More information </a>
+            </div>
             <img
                 src="{{property.title_image_thumb}}"
                 alt="{{property.property_type}}"
@@ -24,22 +31,37 @@
         <div id="pagination">
             <div>
                 <a
+                    href="{{url_for('home.all_properties', page=1)}}"
+                    >first</a
+                >
+            </div>
+            <div>
+                <a
                     href="{{url_for('home.all_properties', page=pagination.page - 1)}}"
                     >previous</a
                 >
             </div>
-            <div><p>{{pagination.page}}</p></div>
+            <div><a>{{pagination.page}}</p></div>
             <div>
-                <a
-                    href="{{url_for('home.all_properties', page=pagination.page)}}"
-                    >next</a
-                >
+                {% if pagination.page < pagination.total_pages %}
+                    <a
+                        href="{{url_for('home.all_properties', page=pagination.page + 1)}}"
+                        >next</a
+                    >
+                {% else %}
+                    <a >next</a>
+                {% endif %}
             </div>
             <div>
-                <a
-                    href="{{url_for('home.all_properties', page=pagination.total)}}"
-                    >Last one</a
-                >
+                {% if pagination.page < pagination.total_pages %}
+                    <a
+                        href="{{url_for('home.all_properties', page=pagination.total_pages)}}"
+                        >Last one</a
+                    >
+                {% else %}
+                    <a >Last one</a>
+                {% endif %}
+
             </div>
         </div>
     </body>
