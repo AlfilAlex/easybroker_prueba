@@ -12,3 +12,4 @@ class Config:
 
     EB_TOKEN = getenv('EB_TOKEN')
     FLASK_ENV = getenv('FLASK_ENV')
+    TEMPLATES_AUTO_RELOAD = getenv('TEMPLATES_AUTO_RELOAD')

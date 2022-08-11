@@ -21,9 +21,26 @@
 
         {% endfor %}
 
-        <button>previous</button>
-        <button>current</button>
-        <button>next</button>
-        <button>Last one</button>
+        <div id="pagination">
+            <div>
+                <a
+                    href="{{url_for('home.all_properties', page=pagination.page - 1)}}"
+                    >previous</a
+                >
+            </div>
+            <div><p>{{pagination.page}}</p></div>
+            <div>
+                <a
+                    href="{{url_for('home.all_properties', page=pagination.page)}}"
+                    >next</a
+                >
+            </div>
+            <div>
+                <a
+                    href="{{url_for('home.all_properties', page=pagination.total)}}"
+                    >Last one</a
+                >
+            </div>
+        </div>
     </body>
 </html>

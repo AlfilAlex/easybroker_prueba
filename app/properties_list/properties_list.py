@@ -7,14 +7,14 @@ from flask import Blueprint
 
 api_prefix = app.config['PREFIX']
 home = Blueprint(
-    'event_profile', __name__,
+    'home', __name__,
     url_prefix=api_prefix,
     template_folder='template'
 )
 
 BASE_URL = app.config['BASE_URL']
 EB_TOKEN = app.config['EB_TOKEN']
-PAG_LIMIT = '3'
+PAGE_LIMIT = 'limit=5'
 
 
 @home.route(f'/properties', methods=['GET'])
@@ -22,12 +22,12 @@ def all_properties():
 
     page = request.args.get('page')
     if page:
-        pagination = f'&{page}'
+        PAGE = f'page={page}'
     else:
-        pagination = ''
+        PAGE = 'page=1'
 
     pagination, properties = get_next_page(
-        f'{BASE_URL}/properties?limit={PAG_LIMIT+pagination}')
+        f'{BASE_URL}/properties?{PAGE_LIMIT}&{PAGE}')
 
     return render_template('home.html', pagination=pagination,
                            properties=properties)
