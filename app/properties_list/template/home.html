@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Properties to sell and buy</title>
+    </head>
+    <body>
+        <h1>Upload new File</h1>
+        {% for property in properties %}
+
+        <div>
+            <h2>{{property.title}}</h2>
+            <h3>{{property.location}}</h3>
+            <p>{{property.property_type}}</p>
+            <p>Public id: {{property.public_id}}</p>
+            <img
+                src="{{property.title_image_thumb}}"
+                alt="{{property.property_type}}"
+            />
+        </div>
+
+        {% endfor %}
+
+        <button>previous</button>
+        <button>current</button>
+        <button>next</button>
+        <button>Last one</button>
+    </body>
+</html>
