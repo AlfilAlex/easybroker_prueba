@@ -8,12 +8,13 @@ def create_app():
                 )
 
     app.config.from_object('config.Config')
+    print(app.config)
     with app.app_context():
 
-        from .properties.properties import properties
-        from .properties_list.properties_list import properties_list
+        from .property.property import property_profile
+        from .properties_list.properties_list import home
 
-        app.register_blueprint(properties)
-        app.register_blueprint(properties_list)
+        app.register_blueprint(property_profile)
+        app.register_blueprint(home)
 
         return app

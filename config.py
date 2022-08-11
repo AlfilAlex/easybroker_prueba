@@ -1,14 +1,14 @@
 from os import path, getenv
 from dotenv import load_dotenv
-import os
 
 basedir = path.abspath(path.dirname(__file__))
 load_dotenv(path.join(basedir, '.env'))
 
 
 class Config:
-    SECRET_KEY = getenv('SECRET_KEY')
-    FLASK_DEBUG = getenv('FLASK_DEBUG')
+    BASE_URL = getenv('BASE_URL')
+    DEBUG = getenv('DEBUG')
     PREFIX = getenv('PREFIX')
 
-    EB_ACCESS_TOKEN = ''
+    EB_TOKEN = getenv('EB_TOKEN')
+    FLASK_ENV = getenv('FLASK_ENV')
