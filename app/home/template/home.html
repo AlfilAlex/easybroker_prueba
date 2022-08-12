@@ -9,9 +9,13 @@
         />
     </head>
     <body>
-        <h1>Propiedades en Comala, Jalisco</h1>
+        {% if notfound %}
+        <h1>Not Found</h1>
+        
+        {% else %}
+        <h1>Properties at Comala, Jalisco</h1>
+        
         {% for property in properties %}
-
         <div id="properties_card">
             <div>
                 <h2>{{property.title}}</h2>
@@ -64,5 +68,6 @@
 
             </div>
         </div>
+        {% endif %}
     </body>
 </html>

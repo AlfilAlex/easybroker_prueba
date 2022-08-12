@@ -24,24 +24,37 @@ PAGE_LIMIT = 'limit=15'
 def all_properties():
 
     page = request.args.get('page')
-    PAGE = PAGE = f'page={page}' if page else 'page=1'
-    pagination, properties = get_next_page(
-        f'{BASE_URL}/properties?{PAGE_LIMIT}&{PAGE}')
+    PAGE = f'page={page}' if page else 'page=1'
 
-    return render_template('home.html', pagination=pagination,
+    notfound = False
+    try:
+        pagination, properties = get_next_page(
+            f'{BASE_URL}/properties?{PAGE_LIMIT}&{PAGE}')
+
+    except requests.exceptions.HTTPError:
+        notfound = True
+        pagination = ''
+        properties = ''
+
+    return render_template('home.html', notfound=notfound,
+                           pagination=pagination,
                            properties=properties)
 
 
 def get_next_page(next_page_url):
     res = requests.get(next_page_url, headers={
         'X-Authorization': EB_TOKEN})
-    res = res.json()
 
-    properties = res['content']
-    pagination = res['pagination']
+    if res.ok:
+        res = res.json()
+        properties = res['content']
+        pagination = res['pagination']
 
-    residue = pagination['total'] % pagination['limit']
-    total_pages = int(pagination['total'] / pagination['limit'])
-    pagination['total_pages'] = total_pages if not residue else total_pages + 1
+        residue = pagination['total'] % pagination['limit']
+        total_pages = int(pagination['total'] / pagination['limit'])
+        pagination['total_pages'] = total_pages if not residue else total_pages + 1
 
-    return pagination, properties
+        return pagination, properties
+
+    else:
+        raise res.raise_for_status()
