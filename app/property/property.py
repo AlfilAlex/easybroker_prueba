@@ -40,6 +40,6 @@ def property_contact(property_id):
         'content-type': 'application/json'})
 
     if res.ok:
-        return render_template('contact_res.html.html', data=form_data)
+        return render_template('contact_res.html', data=form_data)
     else:
         return make_response({'error': res.json()}, res.status_code)

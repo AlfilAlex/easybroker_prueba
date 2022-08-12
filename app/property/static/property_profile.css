@@ -16,6 +16,10 @@
     border-radius: 50%;
 }
 
+.main_body {
+    width: 100%;
+}
+
 img {
     display: inline;
     margin: 0 auto;

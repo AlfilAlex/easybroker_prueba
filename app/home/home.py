@@ -1,3 +1,4 @@
+
 import requests
 
 from flask import render_template, make_response, request
@@ -16,7 +17,7 @@ home = Blueprint(
 
 BASE_URL = app.config['BASE_URL']
 EB_TOKEN = app.config['EB_TOKEN']
-PAGE_LIMIT = 'limit=5'
+PAGE_LIMIT = 'limit=15'
 
 
 @home.route(f'/properties', methods=['GET'])
