@@ -50,4 +50,4 @@ Una vez replicado en virtual environment, es posible alzar el servidor usando la
 
     flask run
 
-For production environment, an Procfile is configured to use with Gunicorn as the WSGI HTTP server. Which is compatible with Elastic Beanstalk configuration requiremnts.
+For production environment, an Procfile is configured to use with Gunicorn as the WSGI HTTP server. Which is compatible with Elastic Beanstalk configuration requirements.
