@@ -54,7 +54,7 @@ An .env file with the following variables are required:
     EB_BASE_URL = *
     EB_TOKEN = *
     PREFIX = /api/v1/
-    EB_PROPERTY_PUBLIC_ID = EB-XXXXX
+    EB_PROPERTY_PUBLIC_ID = XX -XXXXX
     FLASK_DEBUG = *
     TEMPLATES_AUTO_RELOAD = *
 

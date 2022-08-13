@@ -36,8 +36,6 @@ def all_properties():
         pagination = ''
         properties = ''
 
-    print(json.dumps(properties, indent=4, sort_keys=True))
-
     return render_template('home.html', notfound=not_found,
                            pagination=pagination,
                            properties=properties)
