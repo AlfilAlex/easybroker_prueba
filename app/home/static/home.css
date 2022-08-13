@@ -1,5 +1,5 @@
 #pagination {
-    margin-top: 5vh;
+    margin: 5vh auto;
     width: 20%;
     background-color: rgb(232, 243, 255);
     display: flex;

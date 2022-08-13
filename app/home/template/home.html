@@ -11,10 +11,10 @@
     <body>
         {% if notfound %}
         <h1>Not Found</h1>
-        
+
         {% else %}
         <h1>Properties at Comala, Jalisco</h1>
-        
+
         {% for property in properties %}
         <div id="properties_card">
             <div>
@@ -22,7 +22,11 @@
                 <h3>{{property.location}}</h3>
                 <p>{{property.property_type}}</p>
                 <p>Public id: {{property.public_id}}</p>
-                <a href="{{url_for('property_profile.property_profile_page', property_id=property.public_id)}}"> More information </a>
+                <a
+                    href="{{url_for('property_profile.property_profile_page', property_id=property.public_id)}}"
+                >
+                    More information
+                </a>
             </div>
             <img
                 src="{{property.title_image_thumb}}"
@@ -34,38 +38,49 @@
 
         <div id="pagination">
             <div>
-                <a
-                    href="{{url_for('home.all_properties', page=1)}}"
+                {% if pagination.page > 1 %}
+                <a href="{{url_for('home.all_properties', page=1)}}"
                     >first</a
                 >
+                {% else %}
+                <a>first</a>
+                {% endif %}
             </div>
             <div>
+                {% if pagination.page > 1 %}
                 <a
                     href="{{url_for('home.all_properties', page=pagination.page - 1)}}"
                     >previous</a
                 >
+                {% else %}
+                <a>previous</a>
+                {% endif %}
             </div>
-            <div><a>{{pagination.page}}</p></div>
+            <div>
+                <a
+                    >{{ pagination.page ~ ' de ' ~
+                    pagination.total_pages }}</a
+                >
+            </div>
             <div>
                 {% if pagination.page < pagination.total_pages %}
-                    <a
-                        href="{{url_for('home.all_properties', page=pagination.page + 1)}}"
-                        >next</a
-                    >
+                <a
+                    href="{{url_for('home.all_properties', page=pagination.page + 1)}}"
+                    >next</a
+                >
                 {% else %}
-                    <a >next</a>
+                <a>next</a>
                 {% endif %}
             </div>
             <div>
                 {% if pagination.page < pagination.total_pages %}
-                    <a
-                        href="{{url_for('home.all_properties', page=pagination.total_pages)}}"
-                        >Last one</a
-                    >
+                <a
+                    href="{{url_for('home.all_properties', page=pagination.total_pages)}}"
+                    >Last one</a
+                >
                 {% else %}
-                    <a >Last one</a>
+                <a>Last one</a>
                 {% endif %}
-
             </div>
         </div>
         {% endif %}
