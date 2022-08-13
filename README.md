@@ -137,6 +137,8 @@ Next, the web page is presented.
 As we can see, the page is designed to present the individual property main information as a card. All the properties where shown as the _published_ property were not found.
 A squared card as an instagram profile page was considered but because of time constraints the design was not done.
 
+Orange color was selected since it is helpfull to make users feel more happy and energetic.
+
 ![Properties home page](./readme_src/home.png)
 
 #### Pagination in home
@@ -164,6 +166,7 @@ The main property profile consist in basic data such as:
 -   Location
 -   A contact form to create new leads
 
+Blue color was selected to make a contrast with orange color, since blue colors make feel users in a more profesional environment.
 Also, a section to see a miniature of all images of the current property where done
 
 ![Properties home page pagination](./readme_src/property.png)
