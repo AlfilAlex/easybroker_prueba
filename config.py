@@ -5,17 +5,6 @@ basedir = path.abspath(path.dirname(__file__))
 load_dotenv(path.join(basedir, '.env'))
 
 
-class Config:
-    PREFIX = getenv('PREFIX')
-
-    TEMPLATES_AUTO_RELOAD = getenv('TEMPLATES_AUTO_RELOAD')
-    FLASK_DEBUG = getenv('FLASK_DEBUG')
-
-    EB_BASE_URL = getenv('EB_BASE_URL')
-    EB_TOKEN = getenv('EB_TOKEN')
-    EB_PROPERTY_PUBLIC_ID = getenv('EB_PROPERTY_PUBLIC_ID')
-
-
 class BaseConfig:
     PREFIX = getenv('PREFIX')
     pass
@@ -36,7 +25,7 @@ class ProductionConfig(DevelopmentConfig):
 
     EB_PROPERTY_PUBLIC_ID = getenv('EB_PROPERTY_PUBLIC_ID')
     EB_TOKEN = getenv('EB_TOKEN_PRODUCTION')
-    EB_BASE_URL = getenv('EB_PROPERTY_PUBLIC_ID_PRODUCTION')
+    EB_BASE_URL = ''
 
 
 class TestingConfig(DevelopmentConfig):
