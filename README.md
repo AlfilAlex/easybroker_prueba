@@ -162,7 +162,7 @@ The main property profile consist in basic data such as:
 -   Location
 -   A contact form to create new leads
 
-## Also, a section to see a miniature of all images of the current property where done
+Also, a section to see a miniature of all images of the current property where done
 
 ![Properties home page pagination](./readme_src/property.png)
 
