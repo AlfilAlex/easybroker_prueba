@@ -58,6 +58,36 @@ An .env file with the following variables are required:
     FLASK_DEBUG = *
     TEMPLATES_AUTO_RELOAD = *
 
+The environment variables are clasified in 3 main working environments and handled using a congig class as follows:
+
+```python
+class BaseConfig:
+    PREFIX = getenv('PREFIX')
+    pass
+
+
+class DevelopmentConfig(BaseConfig):
+    TEMPLATES_AUTO_RELOAD = getenv('TEMPLATES_AUTO_RELOAD')
+    FLASK_DEBUG = getenv('FLASK_DEBUG')
+
+    EB_PROPERTY_PUBLIC_ID = getenv('EB_PROPERTY_PUBLIC_ID_DEVELOPMENT')
+    EB_TOKEN = getenv('EB_TOKEN_DEVELOPMENT')
+    EB_BASE_URL = getenv('EB_BASE_URL_DEVELOPMENT')
+
+
+class ProductionConfig(DevelopmentConfig):
+    TEMPLATES_AUTO_RELOAD = False
+    FLASK_DEBUG = False
+
+    EB_PROPERTY_PUBLIC_ID = getenv('EB_PROPERTY_PUBLIC_ID')
+    EB_TOKEN = getenv('EB_TOKEN_PRODUCTION')
+    EB_BASE_URL = ''
+
+
+class TestingConfig(DevelopmentConfig):
+    pass
+```
+
 ### Tests
 
 Pytest was used to carry on the test task. Test are configured in the test folder with the next tree:
@@ -73,7 +103,7 @@ Pytest was used to carry on the test task. Test are configured in the test folde
     └── pytest.ini
 ```
 
-Tests were divided in two: functional test and unit test.
+Tests were divided in two: functional test and unit test and are carried out in development git branch.
 
 #### Unit test
 
