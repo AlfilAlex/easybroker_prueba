@@ -1,22 +1,22 @@
 # Prueba técnica EasyBroker
 
-El siguiente proyecto es el resultado de la prueba técnica de EasyBroker que consiste en una página que consume \n
-los recursos mediante su API.
+The following project is the result of EasyBroker's technical test consisting of a page that consumes \n
+resources through its API.
 
-De tal forma, se construye una página web para la venta, renta y compra de propiedades utilizando 2 páginas principales:
+In this way, a web page for the sale, rent and purchase of properties is built using 2 main pages:
 
-1. Properties List (HomePage): Página con estilo vintage (como si fuera de los 2000), donde se presentan cartas de cada propiedad obtenida a partir de una petición a la API de EasyBroker. Cada carta incluye información básica de la propiedad y un botón de ver más que te lleva a la página _property_.
-   Se utiliza una paginación y se muestran 15 resultados por página.
+1. Properties List (HomePage): Page with a vintage style (as if it were from the 2000s), where letters of each property obtained from a request to the EasyBroker API are presented. Each letter includes basic property information and a view more button that takes you to the _property_ page.
+   Pagination is used and 15 results are displayed per page.
 
-2. Property profile: Página con estilo sencillo que incluye una mayor cantidad de información e imagenes de la propiedad. Adicionalmente incluye una sección de contacto. En la cual el usuario registra los datos cuando se encuentre interesado en una propiedad. Estos datos son enviados a EasyBroker, junto con el ID de esta propiedad.
+2. Property profile: Page with a simple style that includes a greater amount of information and images of the property. Additionally, it includes a contact section. In which the user registers the data when he is interested in a property. This data is sent to EasyBroker, along with the ID of this property.
 
-## Implementación
+## Implementation
 
-La implementación de la API se realizó utilizando Flask para el backend y el motor de renderizado Jinja2 para el frontend. Se tomó esta elección debido a la agilidad que proporciona Flask para contruir aplicaciones sencillas y confiables. A pesar de poder escalar bien a proyectos de dimensiones mayores, en dicho caso combendrí migrar a frameworks más robustos como Django.
+The API implementation was done using Flask for the backend and Jinja2 rendering engine for the frontend. This choice was made due to the agility that Flask provides for building simple and reliable applications. Despite being able to scale well to larger projects, in this case I would recommend migrating to more robust frameworks such as Django.
 
-### Alzado del proyecto
+### How to run your project
 
-El proyecto en cuention tiene la siguiente estructura:
+The project has the following structure:
 
 ```
     .
@@ -39,11 +39,11 @@ El proyecto en cuention tiene la siguiente estructura:
     └── wsgi.py
 ```
 
-Los paquetes utilizados para el proyecto se encuentran en el archivo requirements.txt que pueden ser instalados mediante el siguente comando:
+The packages used for the project are found in the requirements.txt file that can be installed using the following command:
 
     pip install -r ./requirements.txt
 
-Una vez replicado en virtual environment, es posible alzar el servidor usando la CLI de flask con el siguiente commando:
+The packages used for the project are found in the requirements.txt file that can be installed using the following command:
 
     flask run
 
