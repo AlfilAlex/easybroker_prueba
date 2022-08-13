@@ -16,6 +16,36 @@ La implementación de la API se realizó utilizando Flask para el backend y el m
 
 ### Alzado del proyecto
 
+El proyecto en cuention tiene la siguiente estructura:
+
+```
+    .
+    ├── app
+    │ ├── home
+    │ │ ├── static
+    │ │ ├── template
+    │ │ └── home.py
+    │ ├── property
+    │ │ ├── static
+    │ │ ├── template
+    │ │ └── property_profile.py
+    │ └── **init**.py
+    ├── tests
+    │ ├── functional
+    │ │ ├── **init**.py
+    │ │ ├── test_home.py
+    │ │ └── test_property_page.py
+    │ ├── unit
+    │ │ ├── **init**.py
+    │ │ └── test_properties_home_page.py
+    │ ├── conftest.py
+    │ └── \_init\_\_.py
+    ├── config.py
+    ├── README.md
+    ├── requirements.txt
+    └── wsgi.py
+```
+
 Los paquetes utilizados para el proyecto se encuentran en el archivo requirements.txt que pueden ser instalados mediante el siguente comando:
 
     pip install -r /path/to/requirements.txt
