@@ -5,6 +5,17 @@
         <title>Contacto to buy a property such as a house</title>
     </head>
     <body>
-        <h1>Contact succes</h1>
+        {% if res.status == 'successful' %}
+        <h1>Contacto exitoso</h1>
+        <p>
+            Felicidates {{contact_form_data.name}}, pronto nos
+            podremos en contacto contigo
+        </p>
+        {% else %}
+        <p>
+            Lo sentimos {{contact_form_data.name}}, ocurrió un error
+            durante la petición
+        </p>
+        {% endif %}
     </body>
 </html>

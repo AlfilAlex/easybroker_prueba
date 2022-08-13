@@ -78,3 +78,16 @@ This function was tested for its behaibour under ok and bad responses from the A
 In functional test views were tested for Home page (properties list), and por Property profile. Making sure that there was a response for calling the app using a test_clint fixure.
 
 Also, EasyBroker API was tested in Property profile and for the contact form but marked with pytest decorator to avoide using it unless necessary.
+
+## Notes
+
+-   What was the hardest thing you had to solve while building the website?
+    I think that testing in general was a little hard since I have not experience on it. So, this consume a lot of time, but after reading a lot of blogs I was able to write some good test, at least is what Im belive.
+
+    Also HTML and CSS are not my strengths so this makes reead a lot of blogs to. Moments like this makes me think in how hard frontend is.
+
+-   Are there any areas of your code that you think isn't that "clean"?
+    I take kare that all views were clean, and all related with flask. Honestly HTML, CSS and posibly test were not that clean, but they are not that bad.
+
+-   If you weren't able to finish: what were you able to complete and were you happy with your progress given the time constraints?
+    I was able to finish with the basic requirements, but I would like to implement a database integration to save information about the user information,, and properties that retanin the attention the most, so in the future implement and AI system recomendation.

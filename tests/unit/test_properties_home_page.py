@@ -4,14 +4,10 @@ import requests
 from unittest.mock import Mock, patch
 from requests import Response
 from json import dumps
-from tests.conftest import new_properties_page
-
-# from app.home.home import get_next_page
-# from wsgi import app
 
 
 @patch('app.home.home.requests.get')
-def test_get_next_page_ok(mock_get, test_app, new_properties_page):
+def test_get_next_page_ok(mock_get, test_app, properties_page_resp):
     '''
     GIVEN a properties page
     WHEN some acces to /properties page
@@ -20,7 +16,7 @@ def test_get_next_page_ok(mock_get, test_app, new_properties_page):
     with test_app.app_context():
         from app.home.home import get_next_page
 
-        mock_get.return_value = new_properties_page
+        mock_get.return_value = properties_page_resp
         pagination, properties = get_next_page('url_100%_real_no_fake.com')
 
         assert pagination['total_pages'] == 10
@@ -28,7 +24,7 @@ def test_get_next_page_ok(mock_get, test_app, new_properties_page):
 
 
 @patch('app.home.home.requests.get')
-def test_get_next_page_fail(mock_get, test_app, new_properties_page_not_ok):
+def test_get_next_page_fail(mock_get, test_app, properties_bad_res):
     '''
     GIVEN a properties page
     WHEN some acces to /properties page
@@ -37,7 +33,7 @@ def test_get_next_page_fail(mock_get, test_app, new_properties_page_not_ok):
     with test_app.app_context():
         from app.home.home import get_next_page
 
-        mock_get.return_value = new_properties_page_not_ok
+        mock_get.return_value = properties_bad_res
 
         with pytest.raises(requests.exceptions.HTTPError):
             pagination, properties = get_next_page('url_100%_real_no_fake.com')

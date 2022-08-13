@@ -16,7 +16,7 @@ TEST_PROPERTY = {'public_id': 'EB-XXXXX', 'title': 'Departamento Fonda de Eduvig
 
 
 @ pytest.fixture()
-def new_properties_page():
+def properties_page_resp():
     res = Response()
     res.code = "expired"
     res.error_type = "expired"
@@ -28,9 +28,9 @@ def new_properties_page():
 
 
 @ pytest.fixture()
-def new_properties_page_not_ok(new_properties_page):
-    new_properties_page.status_code = 404
-    return new_properties_page
+def properties_bad_res(properties_page_resp):
+    properties_page_resp.status_code = 404
+    return properties_page_resp
 
 
 @ pytest.fixture()
@@ -78,8 +78,11 @@ def property_page_ok_response():
 
 
 @ pytest.fixture()
-def property_contact_ok_response():
+def property_contact_ok_response(contact_form_data):
     res = Response()
     res.status_code = 200
+
+    test_property_contact = json.dumps(contact_form_data).encode('utf-8')
+    res._content = test_property_contact
 
     return res
