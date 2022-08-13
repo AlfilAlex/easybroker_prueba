@@ -120,11 +120,13 @@ Also, EasyBroker API was tested in Property profile and for the contact form but
 
 ## Notes
 
+I enjoyed making this simple project, because it made me feel that I was learning much of the HTML and CSS that I had forgotten. Working with easybroker API was easy since its documentation is clean, so it was very helpful. But what I enjoyed the most was learning about testing, since I wanted to learn about it since time ago.
+
 I think that testing in general was a little hard since I have not experience on it. So, this consumes a lot of time, but after reading a lot of blogs I was able to write some good tests, at least that's what Im believe.
 
 Also HTML and CSS are not my strengths so this makes me read a lot of blogs too. Moments like this make me think about how hard frontend is.
 
-I take kare that all views were clean, and all related with flask. Honestly HTML, CSS and possibly tests were not that clean, but they are not that bad.
+I take care that all views were clean, and all related with flask. Honestly HTML, CSS and possibly tests were not that clean, but they are not that bad.
 
 I was able to finish with the basic requirements, but I would like to implement a database integration to save information about the user information,, and properties that retain the attention the most, so in the future implement an AI system recommendation.
 
