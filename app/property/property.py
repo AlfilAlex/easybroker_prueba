@@ -23,8 +23,6 @@ def property_page(property_id):
     res = requests.get(f'{BASE_URL}/properties/{property_id}', headers={
         'X-Authorization': EB_TOKEN})
     property_info = res.json()
-    print(property_info)
-
     return render_template('property.html', property_info=property_info)
 
 
