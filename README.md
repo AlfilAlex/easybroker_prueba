@@ -31,10 +31,7 @@ El proyecto en cuention tiene la siguiente estructura:
     │ │ └── property_profile.py
     ├── tests
     │ ├── functional
-    │ │ ├── test_home.py
-    │ │ └── test_property_page.py
     │ ├── unit
-    │ │ └── test_properties_home_page.py
     │ ├── conftest.py
     ├── config.py
     ├── README.md
@@ -44,10 +41,40 @@ El proyecto en cuention tiene la siguiente estructura:
 
 Los paquetes utilizados para el proyecto se encuentran en el archivo requirements.txt que pueden ser instalados mediante el siguente comando:
 
-    pip install -r /path/to/requirements.txt
+    pip install -r ./requirements.txt
 
 Una vez replicado en virtual environment, es posible alzar el servidor usando la CLI de flask con el siguiente commando:
 
     flask run
 
 For production environment, an Procfile is configured to use with Gunicorn as the WSGI HTTP server. Which is compatible with Elastic Beanstalk configuration requirements.
+
+### Tests
+
+Pytest was used to to carry on the test task. Test are configured in the test folder whith the next tree:
+
+```
+    tests/
+    ├── functional
+    │   ├── test_home.py
+    │   └── test_property_page.py
+    ├── unit
+    │   └── test_properties_home_page.py
+    ├── conftest.py
+    └── pytest.ini
+```
+
+Test where divided in two: functional test and unit test.
+
+#### Unit test
+
+Unit test where focused in testing small units of code such ad utility functions called by view functions.
+Especially in home page, pagination was carried out by a function that calls the next, previus, last and first page page.
+
+This function was tested for its behaibour under ok and bad responses from the API.
+
+#### Fuctional test
+
+In functional test views were tested for Home page (properties list), and por Property profile. Making sure that there was a response for calling the app using a test_clint fixure.
+
+Also, EasyBroker API was tested in Property profile and for the contact form but marked with pytest decorator to avoide using it unless necessary.
