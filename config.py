@@ -6,7 +6,7 @@ load_dotenv(path.join(basedir, '.env'))
 
 
 class Config:
-    BASE_URL = getenv('BASE_URL')
+    EB_BASE_URL = getenv('EB_BASE_URL')
     PREFIX = getenv('PREFIX')
 
     TEMPLATES_AUTO_RELOAD = getenv('TEMPLATES_AUTO_RELOAD')

@@ -22,7 +22,7 @@
                 <h3>{{property.location}}</h3>
                 <p>{{property.property_type}}</p>
                 <p>Public id: {{property.public_id}}</p>
-                <a href="{{url_for('property_profile.property_page', property_id=property.public_id)}}"> More information </a>
+                <a href="{{url_for('property_profile.property_profile_page', property_id=property.public_id)}}"> More information </a>
             </div>
             <img
                 src="{{property.title_image_thumb}}"

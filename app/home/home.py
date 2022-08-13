@@ -15,7 +15,7 @@ home = Blueprint(
     static_url_path='home/static'
 )
 
-BASE_URL = app.config['BASE_URL']
+EB_BASE_URL = app.config['EB_BASE_URL']
 EB_TOKEN = app.config['EB_TOKEN']
 PAGE_LIMIT = 'limit=15'
 
@@ -26,17 +26,17 @@ def all_properties():
     page = request.args.get('page')
     PAGE = f'page={page}' if page else 'page=1'
 
-    notfound = False
+    not_found = False
     try:
         pagination, properties = get_next_page(
-            f'{BASE_URL}/properties?{PAGE_LIMIT}&{PAGE}')
+            f'{EB_BASE_URL}/properties?{PAGE_LIMIT}&{PAGE}')
 
     except requests.exceptions.HTTPError:
-        notfound = True
+        not_found = True
         pagination = ''
         properties = ''
 
-    return render_template('home.html', notfound=notfound,
+    return render_template('home.html', notfound=not_found,
                            pagination=pagination,
                            properties=properties)
 

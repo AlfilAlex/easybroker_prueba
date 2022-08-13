@@ -15,7 +15,7 @@ def test_EB_API_get_response(test_client, test_public_id):
 
 
 @pytest.mark.eb_api
-def test_EB_API_post_response(test_client, test_public_id, form_data):
+def test_EB_API_post_response(test_client, test_public_id, contact_form_data):
     """
     GIVEN a Flask application configured for testing
     WHEN the '/properties' page is requested (POST)
@@ -23,11 +23,11 @@ def test_EB_API_post_response(test_client, test_public_id, form_data):
     """
 
     response = test_client.post(
-        f'/api/v1/properties/{test_public_id}', data=form_data)
+        f'/api/v1/properties/{test_public_id}', data=contact_form_data)
     assert response.status_code == 200
 
 
-@patch('app.property.property.requests.get')
+@patch('app.property.property_profile.requests.get')
 def test_property_profile(mock_get, property_page_ok_response, test_client, test_public_id):
     """
     GIVEN a Flask application configured for testing
@@ -40,8 +40,8 @@ def test_property_profile(mock_get, property_page_ok_response, test_client, test
     assert response.status_code == 200
 
 
-@patch('app.property.property.requests.post')
-def test_property_contact(mock_get, property_contact_ok_response, test_public_id, test_client, form_data):
+@patch('app.property.property_profile.requests.post')
+def test_property_contact(mock_get, property_contact_ok_response, test_public_id, test_client, contact_form_data):
     """
     GIVEN a Flask application configured for testing
     WHEN the '/properties' page is requested (POST)
@@ -49,6 +49,6 @@ def test_property_contact(mock_get, property_contact_ok_response, test_public_id
     """
     mock_get.return_value = property_contact_ok_response
     response = test_client.post(
-        f'/api/v1/properties/{test_public_id}', data=form_data)
+        f'/api/v1/properties/{test_public_id}', data=contact_form_data)
 
     assert response.status_code == 200

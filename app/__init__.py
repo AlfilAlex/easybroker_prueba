@@ -7,7 +7,7 @@ def create_app():
     app.config.from_object('config.Config')
     with app.app_context():
 
-        from .property.property import property_profile
+        from .property.property_profile import property_profile
         from .home.home import home
 
         app.register_blueprint(property_profile)

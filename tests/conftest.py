@@ -52,7 +52,7 @@ def test_public_id(test_app):
 
 
 @ pytest.fixture()
-def form_data():
+def contact_form_data():
     form_data = {
         "name": "John Smith",
                 "phone": "5559090909",
@@ -83,20 +83,3 @@ def property_contact_ok_response():
     res.status_code = 200
 
     return res
-
-
-'''
-{'public_id': 'EB-XXXXX', 'title': 'Departamento Fonda de Eduviges',
-'description': 'Casa de varios cuartos sin iluminación y con almas perdidas',
-'location': {'name': 'Del Valle Oriente, San Pedro Garza García, Nuevo León', 'latitude': 0.0, 'longitude': 0.0},
-'property_type': 'Departamento', 'created_at': '2021-01-29T18:57:04-06:00',
-'updated_at': '2022-08-07T14:25:35-05:00', 'published_at': '2022-08-07T14:25:35-05:00',
-'operations': [{'type': 'rental', 'amount': 48000.0, 'currency': 'MXN', 'formatted_amount': '$48,000', 'commission': {'type': 'percentage'}, 'unit': 'total'}],
-'public_url': 'https://www.stagingeb.com/mx/inmueble/departamento-en-renta-en-valle-oriente-en-san-pedro-garza-garcia-f76dd649-7aea-4756-9674-2412ac8e7cfa',
-'tags': [], 'show_prices': True, 'share_commission': False,
-'property_images': [{'title': None, 'url': 'https://assets.stagingeb.com/property_images/36549/127842/EB-C6549.jpg?version=1611968795'},
-{'title': None, 'url': 'https://assets.stagingeb.com/property_images/36549/127843/EB-C6549.jpg?version=1611968795'},
-'agent': None, 'features': []}
-
-
-'''
