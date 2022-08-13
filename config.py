@@ -7,9 +7,11 @@ load_dotenv(path.join(basedir, '.env'))
 
 class Config:
     BASE_URL = getenv('BASE_URL')
-    DEBUG = getenv('DEBUG')
     PREFIX = getenv('PREFIX')
 
-    EB_TOKEN = getenv('EB_TOKEN')
-    FLASK_ENV = getenv('FLASK_ENV')
     TEMPLATES_AUTO_RELOAD = getenv('TEMPLATES_AUTO_RELOAD')
+    FLASK_ENV = getenv('FLASK_ENV')
+    DEBUG = getenv('DEBUG')
+
+    EB_TOKEN = getenv('EB_TOKEN')
+    EB_PROPERTY_PUBLIC_ID = getenv('EB_PROPERTY_PUBLIC_ID')
