@@ -51,7 +51,7 @@ For production environment, an Procfile is configured to use with Gunicorn as th
 
 ### Tests
 
-Pytest was used to to carry on the test task. Test are configured in the test folder whith the next tree:
+Pytest was used to carry on the test task. Test are configured in the test folder with the next tree:
 
 ```
     tests/
@@ -64,43 +64,43 @@ Pytest was used to to carry on the test task. Test are configured in the test fo
     └── pytest.ini
 ```
 
-Test where divided in two: functional test and unit test.
+Tests were divided in two: functional test and unit test.
 
 #### Unit test
 
-Unit test where focused in testing small units of code such ad utility functions called by view functions.
-Especially in home page, pagination was carried out by a function that calls the next, previus, last and first page page.
+Unit tests were focused on testing small units of code such as utility functions called by view functions.
+Especially on the home page, pagination was carried out by a function that calls the next, previous, last and first page page.
 
-This function was tested for its behaibour under ok and bad responses from the API.
+This function was tested for its behavior under ok and bad responses from the API.
 
 #### Fuctional test
 
-In functional test views were tested for Home page (properties list), and por Property profile. Making sure that there was a response for calling the app using a test_clint fixure.
+In functional test views were tested for Home page (properties list), and por Property profile. Making sure that there was a response for calling the app using a test_clint fixture.
 
-Also, EasyBroker API was tested in Property profile and for the contact form but marked with pytest decorator to avoide using it unless necessary.
+Also, EasyBroker API was tested in Property profile and for the contact form but marked with pytest decorator to avoid using it unless necessary.
 
 ## Notes
 
-I think that testing in general was a little hard since I have not experience on it. So, this consume a lot of time, but after reading a lot of blogs I was able to write some good test, at least is what Im belive.
+I think that testing in general was a little hard since I have not experience on it. So, this consumes a lot of time, but after reading a lot of blogs I was able to write some good tests, at least that's what Im believe.
 
-Also HTML and CSS are not my strengths so this makes reead a lot of blogs to. Moments like this makes me think in how hard frontend is.
+Also HTML and CSS are not my strengths so this makes me read a lot of blogs too. Moments like this make me think about how hard frontend is.
 
-I take kare that all views were clean, and all related with flask. Honestly HTML, CSS and posibly test were not that clean, but they are not that bad.
+I take kare that all views were clean, and all related with flask. Honestly HTML, CSS and possibly tests were not that clean, but they are not that bad.
 
-I was able to finish with the basic requirements, but I would like to implement a database integration to save information about the user information,, and properties that retanin the attention the most, so in the future implement and AI system recomendation.
+I was able to finish with the basic requirements, but I would like to implement a database integration to save information about the user information,, and properties that retain the attention the most, so in the future implement an AI system recommendation.
 
 Next, the web page is presented.
 
 ### Properties list page (Home page)
 
-As we can see, the page is disegned to present the individual property main information as a card. All the properties where showed as the _published_ property was not found.
-A squered card as a instagram profile page was considered but becouse of time constrains the design was not done.
+As we can see, the page is designed to present the individual property main information as a card. All the properties where shown as the _published_ property were not found.
+A squared card as an instagram profile page was considered but because of time constraints the design was not done.
 
 ![Properties home page](./readme_src/home.png)
 
 #### Pagination in home
 
-## THe pagination was done with simple buttons but big jumps to start and last page where consider.
+The pagination was done with simple buttons but big jumps to start and last page where considered.
 
 ![Properties home page pagination](./readme_src/pagination_cropped.png)
 
@@ -122,9 +122,11 @@ The main property profile consist in basic data such as:
 
 #### Contact form
 
-A basic contact form inside the property profile was implemented using plain HTML. The submit button send the information to a EP where the EasyBroker is used to send the information to.
-In this section, was considered create a users models to save information about the user and its interes, so in the future a rank system could be inplementes.
+A basic contact form inside the property profile was implemented using plain HTML. The submit button sends the information to an EP where the EasyBroker is used to send the information to.
+In this section, it was considered to create a users model to save information about the user and its interes, so in the future a rank system could be implemented.
+
 ![Properties home page pagination](./readme_src/form.png)
 
-In case of succes, the user is redirected a very simple page where it is invited to continue viewing the other properties. A more styled page is required but due time constrains I was not able.
+In case of success, the user is redirected to a very simple page where it is invited to continue viewing the other properties. A more styled page is required but due time constraints I was not able.
+
 ![Properties home page pagination](./readme_src/succes.png)
