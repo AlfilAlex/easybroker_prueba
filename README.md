@@ -14,7 +14,7 @@ In this way, a web page for the sale, rent and purchase of properties is built u
 
 The API implementation was done using Flask for the backend and Jinja2 rendering engine for the frontend. This choice was made due to the agility that Flask provides for building simple and reliable applications. Despite being able to scale well to larger projects, in this case I would recommend migrating to more robust frameworks such as Django.
 
-### How to run your project
+### How to run the project
 
 The project has the following structure:
 
