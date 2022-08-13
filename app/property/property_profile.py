@@ -1,6 +1,6 @@
 import requests
 
-from flask import render_template, request, make_response
+from flask import render_template, request
 from flask import current_app as app
 from flask import Blueprint
 

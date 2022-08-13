@@ -1,4 +1,4 @@
-
+import json
 import requests
 
 from flask import render_template, make_response, request
@@ -35,6 +35,8 @@ def all_properties():
         not_found = True
         pagination = ''
         properties = ''
+
+    print(json.dumps(properties, indent=4, sort_keys=True))
 
     return render_template('home.html', notfound=not_found,
                            pagination=pagination,

@@ -81,13 +81,40 @@ Also, EasyBroker API was tested in Property profile and for the contact form but
 
 ## Notes
 
--   What was the hardest thing you had to solve while building the website?
-    I think that testing in general was a little hard since I have not experience on it. So, this consume a lot of time, but after reading a lot of blogs I was able to write some good test, at least is what Im belive.
+I think that testing in general was a little hard since I have not experience on it. So, this consume a lot of time, but after reading a lot of blogs I was able to write some good test, at least is what Im belive.
 
-    Also HTML and CSS are not my strengths so this makes reead a lot of blogs to. Moments like this makes me think in how hard frontend is.
+Also HTML and CSS are not my strengths so this makes reead a lot of blogs to. Moments like this makes me think in how hard frontend is.
 
--   Are there any areas of your code that you think isn't that "clean"?
-    I take kare that all views were clean, and all related with flask. Honestly HTML, CSS and posibly test were not that clean, but they are not that bad.
+I take kare that all views were clean, and all related with flask. Honestly HTML, CSS and posibly test were not that clean, but they are not that bad.
 
--   If you weren't able to finish: what were you able to complete and were you happy with your progress given the time constraints?
-    I was able to finish with the basic requirements, but I would like to implement a database integration to save information about the user information,, and properties that retanin the attention the most, so in the future implement and AI system recomendation.
+I was able to finish with the basic requirements, but I would like to implement a database integration to save information about the user information,, and properties that retanin the attention the most, so in the future implement and AI system recomendation.
+
+Next, the web page is presented.
+
+### Properties list page (Home page)
+
+As we can see, the page is disegned to present the individual property main information as a card. All the properties where showed as the _published_ property was not found.
+A squered card as a instagram profile page was considered but becouse of time constrains the design was not done.
+
+![Properties home page](./readme_src/home.png)
+
+#### Pagination in home
+
+THe pagination was done with simple buttons but big jumps to start and last page where consider.
+
+![Properties home page pagination](./readme_src/pagination.png)
+
+### Property profile
+
+The main property profile consist in basic data such as:
+
+-   Public ID
+-   Title
+-   Description
+-   The first image
+-   Property type
+-   Location
+-   A contact form to create new leads
+
+Also, a section to see a miniature of all images of the current property where done
+![Properties home page pagination](./readme_src/property.png)
