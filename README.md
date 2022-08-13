@@ -100,9 +100,9 @@ A squered card as a instagram profile page was considered but becouse of time co
 
 #### Pagination in home
 
-THe pagination was done with simple buttons but big jumps to start and last page where consider.
+## THe pagination was done with simple buttons but big jumps to start and last page where consider.
 
-![Properties home page pagination](./readme_src/pagination.png)
+![Properties home page pagination](./readme_src/pagination_cropped.png)
 
 ### Property profile
 
@@ -116,5 +116,15 @@ The main property profile consist in basic data such as:
 -   Location
 -   A contact form to create new leads
 
-Also, a section to see a miniature of all images of the current property where done
+## Also, a section to see a miniature of all images of the current property where done
+
 ![Properties home page pagination](./readme_src/property.png)
+
+#### Contact form
+
+A basic contact form inside the property profile was implemented using plain HTML. The submit button send the information to a EP where the EasyBroker is used to send the information to.
+In this section, was considered create a users models to save information about the user and its interes, so in the future a rank system could be inplementes.
+![Properties home page pagination](./readme_src/form.png)
+
+In case of succes, the user is redirected a very simple page where it is invited to continue viewing the other properties. A more styled page is required but due time constrains I was not able.
+![Properties home page pagination](./readme_src/succes.png)
