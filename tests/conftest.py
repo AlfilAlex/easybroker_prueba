@@ -1,6 +1,7 @@
 import pytest
+import json
+
 from app import create_app
-# from wsgi import app
 from requests import Response
 
 TEST_PROPERTY = {'public_id': 'EB-XXXXX', 'title': 'Departamento Fonda de Eduviges',
@@ -63,9 +64,25 @@ def form_data():
     return form_data
 
 
-@ pytest.fixure()
+@ pytest.fixture()
 def property_page_ok_response():
-    return TEST_PROPERTY
+    res = Response()
+    res.code = "expired"
+    res.error_type = "expired"
+    res.status_code = 200
+
+    test_property_str = json.dumps(TEST_PROPERTY).encode('utf-8')
+    res._content = test_property_str
+
+    return res
+
+
+@ pytest.fixture()
+def property_contact_ok_response():
+    res = Response()
+    res.status_code = 200
+
+    return res
 
 
 '''

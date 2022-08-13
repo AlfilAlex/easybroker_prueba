@@ -10,7 +10,8 @@ class Config:
     PREFIX = getenv('PREFIX')
 
     TEMPLATES_AUTO_RELOAD = getenv('TEMPLATES_AUTO_RELOAD')
-    FLASK_ENV = getenv('FLASK_ENV')
+    # FLASK_ENV = getenv('FLASK_ENV')
+    FLASK_DEBUG = getenv('FLASK_DEBUG')
     DEBUG = getenv('DEBUG')
 
     EB_TOKEN = getenv('EB_TOKEN')

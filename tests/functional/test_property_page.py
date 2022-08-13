@@ -34,20 +34,20 @@ def test_property_profile(mock_get, property_page_ok_response, test_client, test
     WHEN the '/properties' page is requested (GET)
     THEN check the response is valid
     """
-    mock_get.return_value = ok_response
+    mock_get.return_value = property_page_ok_response
     response = test_client.get(f'/api/v1/properties/{test_public_id}')
 
     assert response.status_code == 200
 
 
 @patch('app.property.property.requests.post')
-def test_property_contact(mock_get, property_page_bad_response, test_public_id, test_client, form_data):
+def test_property_contact(mock_get, property_contact_ok_response, test_public_id, test_client, form_data):
     """
     GIVEN a Flask application configured for testing
     WHEN the '/properties' page is requested (POST)
     THEN check the response is valid
     """
-    mock_get.return_value = bad_response
+    mock_get.return_value = property_contact_ok_response
     response = test_client.post(
         f'/api/v1/properties/{test_public_id}', data=form_data)
 
