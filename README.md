@@ -143,6 +143,13 @@ The pagination was done with simple buttons but big jumps to start and last page
 
 ![Properties home page pagination](./readme_src/pagination_cropped.png)
 
+Two things were considered for pagination:
+
+1. If you are on the first page, the first and previous buttons are disable as seen in the previous image.
+2. If you are in the las page, next and last pages buttons are diable, as can be seen in next image
+
+    ![Properties home page pagination](./readme_src/pagination_last_page.png)
+
 ### Property profile
 
 The main property profile consist in basic data such as:
