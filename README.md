@@ -49,6 +49,15 @@ The packages used for the project are found in the requirements.txt file that ca
 
 For production environment, an Procfile is configured to use with Gunicorn as the WSGI HTTP server. Which is compatible with Elastic Beanstalk configuration requirements.
 
+An .env file with the following variables are required:
+
+    EB_BASE_URL = *
+    EB_TOKEN = *
+    PREFIX = /api/v1/
+    EB_PROPERTY_PUBLIC_ID = EB-XXXXX
+    FLASK_DEBUG = *
+    TEMPLATES_AUTO_RELOAD = *
+
 ### Tests
 
 Pytest was used to carry on the test task. Test are configured in the test folder with the next tree:
