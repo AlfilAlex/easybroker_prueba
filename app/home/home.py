@@ -36,8 +36,6 @@ def all_properties():
         pagination = ''
         properties = ''
 
-    print(pagination)
-
     return render_template('home.html', notfound=not_found,
                            pagination=pagination,
                            properties=properties)

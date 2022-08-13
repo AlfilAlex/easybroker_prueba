@@ -22,11 +22,16 @@
                 <h3>{{property.location}}</h3>
                 <p>{{property.property_type}}</p>
                 <p>Public id: {{property.public_id}}</p>
+
+                {% if property.title_image_thumb %}
                 <a
                     href="{{url_for('property_profile.property_profile_page', property_id=property.public_id)}}"
                 >
                     More information
                 </a>
+                {% else %}
+                <a> More information </a>
+                {% endif %}
             </div>
             <img
                 src="{{property.title_image_thumb}}"
